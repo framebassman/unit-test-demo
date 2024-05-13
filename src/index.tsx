@@ -7,12 +7,17 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+import { CustomForm } from './CustomForm';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App/>,
   },
+  {
+    path: "form",
+    element: <CustomForm/>
+  }
 ]);
 
 const root = ReactDOM.createRoot(
