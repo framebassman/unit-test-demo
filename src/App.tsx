@@ -1,8 +1,15 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  const navigate = useNavigate();
+
+  function handleClick() {
+    return navigate("/form");
+  }
+
   return (
     <div className="App">
       <header className="App-header">
@@ -18,6 +25,12 @@ function App() {
         >
           Learn React
         </a>
+        <button
+          className="App-button"
+          onClick={handleClick}
+        >
+          Navigate To Form
+        </button>
       </header>
     </div>
   );
