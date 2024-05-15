@@ -8,8 +8,9 @@ test('from App to CustomForm', async () => {
   render(<CustomRouter/>);
   const user = userEvent.setup();
 
-  expect(screen.getByText(/Navigate To Form/i)).toBeInTheDocument();
+  const button = screen.getByText(/Navigate To Form/i);
+  expect(button).toBeInTheDocument();
 
-  await user.click(screen.getByText(/Navigate To Form/i));
+  await user.click(button);
   expect(screen.getByText(/Subscribe!/i)).toBeInTheDocument();
 })

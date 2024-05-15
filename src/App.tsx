@@ -1,13 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import logo from './logo.svg';
 import './App.css';
 
 function App() {
   const navigate = useNavigate();
+  const [buttonColor, setButtonColor] = useState('natural');
 
   function handleClick() {
     return navigate("/form");
+  }
+  
+  function makeRedClickHandle() {
+    setButtonColor('green');
+  }
+  
+  function getStatus() {
+    return true;
   }
 
   return (
@@ -31,6 +40,7 @@ function App() {
         >
           Navigate To Form
         </button>
+        <button className={buttonColor} onClick={makeRedClickHandle}>Make red</button>
       </header>
     </div>
   );
