@@ -5,6 +5,7 @@ import {
 } from "react-router-dom";
 import App from './App';
 import { CustomForm } from './CustomForm';
+import { Anonimus } from './Anonimus';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -13,6 +14,10 @@ const router = createBrowserRouter([
   {
     path: "/form",
     element: <CustomForm/>,
+  },
+  {
+    path: "anonimus",
+    element: <Anonimus/>,
   },
 ]);
 
