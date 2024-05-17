@@ -1,4 +1,3 @@
-import fetch from 'node-fetch';
 import {
   ClientBuilder,
 
@@ -7,16 +6,16 @@ import {
   type HttpMiddlewareOptions, // Required for sending HTTP requests
 } from '@commercetools/sdk-client-v2';
 
-const projectKey = `{${process.env.CTP_PROJECT_KEY}}`;
-const scopes = [`{${process.env.CTP_SCOPES}}`];
+const projectKey = `{${process.env.REACT_APP_CTP_PROJECT_KEY}}`;
+const scopes = [`{${process.env.REACT_APP_CTP_SCOPES}}`];
 
 // Configure authMiddlewareOptions
 const authMiddlewareOptions: AuthMiddlewareOptions = {
-  host: `https://auth.${process.env.CTP_REGION}.commercetools.com`,
+  host: `https://auth.${process.env.REACT_APP_CTP_REGION}.gcp.commercetools.com`,
   projectKey: projectKey,
   credentials: {
-    clientId: `{${process.env.CTP_CLIENT_ID}}`,
-    clientSecret: `{${process.env.CTP_CLIENT_SECRET}}`,
+    clientId: `{${process.env.REACT_APP_CTP_CLIENT_ID}}`,
+    clientSecret: `{${process.env.REACT_APP_CTP_CLIENT_SECRET}}`,
   },
   scopes,
   fetch,
@@ -24,7 +23,7 @@ const authMiddlewareOptions: AuthMiddlewareOptions = {
 
 // Configure httpMiddlewareOptions
 const httpMiddlewareOptions: HttpMiddlewareOptions = {
-  host: `https://api.${process.env.CTP_REGION}.commercetools.com`,
+  host: `https://api.${process.env.REACT_APP_CTP_REGION}.gcp.commercetools.com`,
   fetch,
 };
 
